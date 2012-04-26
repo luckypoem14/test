@@ -84,8 +84,7 @@ layout: default
 <div class="ds-thread"></div>
 <style type="text/css">.jthis{-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;box-shadow:inset 0px 1px 0px 0px #97c4fe;background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#3d94f6),color-stop(1,#1e62d0) );background:-moz-linear-gradient( center top,#3d94f6 5%,#1e62d0 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6',endColorstr='#1e62d0');background-color:#3d94f6;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;border:1px solid #337fed;display:inline-block;color:#ffffff;font-family:arial;font-size:15px;font-weight:bold;padding:6px 24px;text-decoration:none;text-shadow:1px 1px 0px #1570cd;}.classname:hover{background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#1e62d0),color-stop(1,#3d94f6) );background:-moz-linear-gradient( center top,#1e62d0 5%,#3d94f6 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0',endColorstr='#3d94f6');background-color:#1e62d0;}.classname:active{position:relative;top:1px;}.duoshuo{-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;box-shadow:inset 0px 1px 0px 0px #f7c5c0;background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#fc8d83),color-stop(1,#e4685d) );background:-moz-linear-gradient( center top,#fc8d83 5%,#e4685d 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fc8d83',endColorstr='#e4685d');background-color:#fc8d83;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;border:1px solid #d83526;display:inline-block;color:#ffffff;font-family:arial;font-size:15px;font-weight:bold;padding:6px 24px;text-decoration:none;text-shadow:1px 1px 0px #b23e35;}.classname:hover{background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#e4685d),color-stop(1,#fc8d83) );background:-moz-linear-gradient( center top,#e4685d 5%,#fc8d83 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4685d',endColorstr='#fc8d83');background-color:#e4685d;}.classname:active{position:relative;top:1px;}.disqus{-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;box-shadow:inset 0px 1px 0px 0px #a4e271;background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#89c403),color-stop(1,#77a809) );background:-moz-linear-gradient( center top,#89c403 5%,#77a809 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403',endColorstr='#77a809');background-color:#89c403;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;border:1px solid #74b807;display:inline-block;color:#ffffff;font-family:arial;font-size:15px;font-weight:bold;padding:6px 24px;text-decoration:none;text-shadow:1px 1px 0px #528009;}.classname:hover{background:-webkit-gradient( linear,left top,left bottom,color-stop(0.05,#77a809),color-stop(1,#89c403) );background:-moz-linear-gradient( center top,#77a809 5%,#89c403 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809',endColorstr='#89c403');background-color:#77a809;}.classname:active{position:relative;top:1px;}</style>
 <script>
-	var duoShuoLoaded=false;
-	var disqusLoaded=false;
+
 	function disqus()
 	{
 		var disqus_shortname = 'ddatsh'; 
@@ -98,6 +97,7 @@ layout: default
 	}
 
 	function loadDuoShuo(){
+		$("#disqus_thread").hide();
 		if ($("#ds-thread").length > 0){ 
 			$('#ds-thread').toggle();
 			$("#useDisqus").show();
@@ -112,6 +112,7 @@ layout: default
 		}
 	}
 	function loadDisqis(){
+		$("#disqus_thread").show();
 		if ($("#dsq-content").length > 0){ 
 		 	$('#dsq-content').toggle();
 		 	$("#useDuoShuo").show();
