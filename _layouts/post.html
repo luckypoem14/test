@@ -97,6 +97,7 @@ layout: default
 	}
 
 	function loadDuoShuo(){
+		$("#useDisqus").show();
 		$("#disqus_thread").hide();
 		if ($("#ds-thread").length > 0){ 
 			$('#ds-thread').toggle();
@@ -112,18 +113,12 @@ layout: default
 		}
 	}
 	function loadDisqis(){
+		$('#ds-thread').hide();
+		$("#useDuoShuo").show();
 		$("#disqus_thread").show();
 		if ($("#dsq-content").length > 0){ 
-		 	$('#dsq-content').toggle();
-		 	$("#useDuoShuo").show();
 		}else{
 			disqus();
-			if   ($("#useDuoShuo").is( ":hidden ")){
-					$("#useDuoShuo").show();
-			}
-			if ($("#ds-thread").length > 0){ 
-    			 	$('#ds-thread').toggle();
-    			 }
 		}
 	}
 	
