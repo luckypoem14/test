@@ -99,6 +99,7 @@ layout: default
 
 	function loadDuoShuo(){
 		if ($("#ds-thread").length > 0){ 
+			$('#ds-thread').toggle();
 		}else{
 				jQuery.getScript(duoshuoURL,function(){});
 				if   ($("#useDisqus").is( ":hidden ")){
@@ -111,6 +112,7 @@ layout: default
 	}
 	function loadDisqis(){
 		if ($("#dsq-content").length > 0){ 
+		 	$('#dsq-content').toggle();
 		}else{
 			disqus();
 			if   ($("#useDuoShuo").is( ":hidden ")){
