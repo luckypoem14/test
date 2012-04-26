@@ -17,7 +17,7 @@ title: 极简设计
 	
 	{% for post in paginator.posts %}
 	<div class="posts">
-		11<h4 style="margin:0px 0px 10px -20px "><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} </a><span style="float:right;font-size:0.8em;">  {{ post.date | date:"%Y-%m-%d" }}</span></h4>
+		<h4 style="margin:0px 0px 10px -20px "><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} </a><span style="float:right;font-size:0.8em;">  {{ post.date | date:"%Y-%m-%d" }}</span></h4>
 		
 		<div class="entry">
 			{% if post.description %}
