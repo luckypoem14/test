@@ -1,0 +1,52 @@
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script>
+	function disqus()
+	{
+		var disqus_shortname = 'ddatsh'; 
+		var disqus_url = '{{ site.url }}{{ page.url | remove:'index.html' }}';
+		(function() {
+			var dsq = document.createElement('script'); dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	}
+
+	function loadDuoShuo(){
+		$("#disqus_thread").hide();
+		$('#ds-thread').show();
+		$("#useDisqus").show();
+		if ($("#ds-thread").length > 0){ 
+		}else{
+				jQuery.getScript(duoshuoURL,function(){});
+		}
+	}
+	function loadDisqis(){
+		$('#ds-thread').hide();
+		$("#useDuoShuo").show();
+		$("#disqus_thread").show();
+		if ($("#dsq-content").length > 0){ 
+		}else{
+			disqus();
+		}
+	}
+	
+if( location.host != "localhost"){
+	//duo shuo
+	var duoshuoQuery = {short_name: "ddatsh"};
+	var duoshuoURL="http://static.duoshuo.com/embed.js";
+	
+	loadDuoShuo();
+	
+	$("<span/>").html("<input id='useDuoShuo' type='button' class='duoshuo' onclick='$(this).hide();loadDuoShuo();' value='多说留言'>").appendTo('#clear');  
+	$("#useDuoShuo").hide();
+	//disqus
+	$("<span/>").html("<input id='useDisqus' type='button' class='disqus' onclick='$(this).hide();loadDisqis();' value='disqus留言'>").appendTo('#clear');  
+}
+</script>
+
+<!-- Duoshuo Comment END -->
+<div class="comment">
+<div id="disqus_thread"></div>
+</div>
+
