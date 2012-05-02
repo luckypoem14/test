@@ -41,3 +41,4 @@ p{padding:.3em 0;white-space:pre-wrap;}
 不放在一起，就1.4M
 
 ~~页面最下面,统计脚本,只用百度~~
+所有统计都不用了
