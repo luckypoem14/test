@@ -9,9 +9,7 @@ var q=null;window.PR_SHOULD_USE_CONTINUATION=!0;(function(){function L(a){functi
 
 /*use define script,such as disable select*/
 $(window).keypress(function(e){if(((e.which==115)||(e.which==104)||(e.which==112)||(e.which==114)||(e.which==97)||(e.which==110))&&e.ctrlKey){e.preventDefault();}});$(document).bind("contextmenu",function(){return false;});$(document).keydown(function(){return key(arguments[0]);});document.onselectstart=function(){return/input|textarea/i.test(window.event.srcElement.tagName);};function key(e){if(window.event){e=event;e.which=e.keyCode;var code=e.which;var isAlt=e.altKey;var isCtrl=e.ctrlKey;var isShift=e.shiftKey;if(isCtrl){if(code==78||code==80||code==82){event.keyCode=0;event.returnValue=false;}}else if(isAlt){if(code==37||code==39){event.returnValue=false;}else if(code==115){window.showModelessDialog("about:blank","","dialogWidth:1px;dialogheight:1px");return false;}}else if(isShift){if(code==121){event.returnValue=false;}}else if(code==116||code==122){event.keyCode=0;event.returnValue=false;}}}
-/*scroll to top*/
-var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:0,fadeduration:[500,100]},controlHTML:'<img src="img/scrolltop.gif" style="width:48px; height:48px" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:'#post',state:{isvisible:false,shouldvisible:false},scrollup:function(){if(!this.cssfixedsupport){this.$control.css({opacity:0});}var dest=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);if(typeof dest=="string"&&jQuery('#'+dest).length==1){dest=jQuery('#'+dest).offset().top;}else{dest=0;};this.$body.animate({scrollTop:dest},this.setting.scrollduration);},keepfixed:function(){var $window=jQuery(window);var controlx=$window.scrollLeft()+$window.width()-this.$control.width()-this.controlattrs.offsetx;var controly=$window.scrollTop()+$window.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:controlx+'px',top:controly+'px'});},togglecontrol:function(){var scrolltop=jQuery(window).scrollTop();if(!this.cssfixedsupport){this.keepfixed();}this.state.shouldvisible=(scrolltop>=this.setting.startline)?true:false;if(this.state.shouldvisible&&!this.state.isvisible){this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]);this.state.isvisible=true;}else if(this.state.shouldvisible==false&&this.state.isvisible){this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]);this.state.isvisible=false;}}};scrolltotop.controlHTML='<span style="color:white">goto<br/>top</span>';var mainobj=scrolltotop;var iebrws=document.all;mainobj.cssfixedsupport=!iebrws||iebrws&&document.compatMode=="CSS1Compat"&&window.XMLHttpRequest;mainobj.$body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');mainobj.$control=$('<div id="topcontrol">'+mainobj.controlHTML+'</div>').css({position:mainobj.cssfixedsupport?'fixed':'absolute',bottom:'125px',right:'0',opacity:0,cursor:'pointer'}).click(function(){mainobj.scrollup();return false}).appendTo('body');if(document.all&&!window.XMLHttpRequest&&mainobj.$control.text()!=''){mainobj.$control.css({width:mainobj.$control.width()});}mainobj.togglecontrol();$('a[href="'+mainobj.anchorkeyword+'"]').click(function(){mainobj.scrollup();return false;});$(window).bind('scroll resize',function(e){mainobj.togglecontrol();});
-	
+
 //duo shuo
 var duoshuoQuery = {short_name: "ddatsh"};
 var duoshuoURL="http://static.duoshuo.com/embed.js";
@@ -47,17 +45,21 @@ function loadDisqis(){
 }
 
 $(document).ready(function(){
- if( location.host != "localhost"){
-	//duo shuo
-	var duoshuoQuery = {short_name: "ddatsh"};
-	var duoshuoURL="http://static.duoshuo.com/embed.js";
+	/*scroll to top*/
+	var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:0,fadeduration:[500,100]},controlHTML:'<img src="img/scrolltop.gif" style="width:48px; height:48px" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:'#post',state:{isvisible:false,shouldvisible:false},scrollup:function(){if(!this.cssfixedsupport){this.$control.css({opacity:0});}var dest=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);if(typeof dest=="string"&&jQuery('#'+dest).length==1){dest=jQuery('#'+dest).offset().top;}else{dest=0;};this.$body.animate({scrollTop:dest},this.setting.scrollduration);},keepfixed:function(){var $window=jQuery(window);var controlx=$window.scrollLeft()+$window.width()-this.$control.width()-this.controlattrs.offsetx;var controly=$window.scrollTop()+$window.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:controlx+'px',top:controly+'px'});},togglecontrol:function(){var scrolltop=jQuery(window).scrollTop();if(!this.cssfixedsupport){this.keepfixed();}this.state.shouldvisible=(scrolltop>=this.setting.startline)?true:false;if(this.state.shouldvisible&&!this.state.isvisible){this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]);this.state.isvisible=true;}else if(this.state.shouldvisible==false&&this.state.isvisible){this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]);this.state.isvisible=false;}}};scrolltotop.controlHTML='<span style="color:white">goto<br/>top</span>';var mainobj=scrolltotop;var iebrws=document.all;mainobj.cssfixedsupport=!iebrws||iebrws&&document.compatMode=="CSS1Compat"&&window.XMLHttpRequest;mainobj.$body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');mainobj.$control=$('<div id="topcontrol">'+mainobj.controlHTML+'</div>').css({position:mainobj.cssfixedsupport?'fixed':'absolute',bottom:'125px',right:'0',opacity:0,cursor:'pointer'}).click(function(){mainobj.scrollup();return false}).appendTo('body');if(document.all&&!window.XMLHttpRequest&&mainobj.$control.text()!=''){mainobj.$control.css({width:mainobj.$control.width()});}mainobj.togglecontrol();$('a[href="'+mainobj.anchorkeyword+'"]').click(function(){mainobj.scrollup();return false;});$(window).bind('scroll resize',function(e){mainobj.togglecontrol();});
+		
+	 if( location.host != "localhost"){
+		//duo shuo
+		var duoshuoQuery = {short_name: "ddatsh"};
+		var duoshuoURL="http://static.duoshuo.com/embed.js";
+		
+		loadDuoShuo();
+		
+		$("<span/>").html("<input id='useDuoShuo' type='button' class='duoshuo' onclick='$(this).hide();loadDuoShuo();' value='多说留言'>").appendTo('#clear');  
+		$("#useDuoShuo").hide();
+		//disqus
+		$("<span/>").html("<input id='useDisqus' type='button' class='disqus' onclick='$(this).hide();loadDisqis();' value='disqus留言'>").appendTo('#clear');  
+	}
 	
-	loadDuoShuo();
-	
-	$("<span/>").html("<input id='useDuoShuo' type='button' class='duoshuo' onclick='$(this).hide();loadDuoShuo();' value='多说留言'>").appendTo('#clear');  
-	$("#useDuoShuo").hide();
-	//disqus
-	$("<span/>").html("<input id='useDisqus' type='button' class='disqus' onclick='$(this).hide();loadDisqis();' value='disqus留言'>").appendTo('#clear');  
-}
 });
 
