@@ -76,7 +76,7 @@ h3 {font-size:1.2em;}
 h2,h3{background:none repeat scroll 0 0 #DDDDDD;}
 
 
-pre,code{
+pre,code,xmp{
 	padding:5px;
 	overflow: auto; 
 	background-color: black;
