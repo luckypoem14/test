@@ -39,8 +39,7 @@ p{padding:.3em 0;white-space:pre-wrap;}
 
 _layouts\default.html
 
-<pre class="prettyprint"><code>
-<xmp><!DOCTYPE html>
+<pre class="prettyprint lang-html"><xmp><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-cn">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -106,8 +105,7 @@ _layouts\default.html
 		}
 	</script>
 </body>
-</html>
-</xmp></code></pre>
+</html></xmp></pre>
 
 将JS和CSS压缩
 页面最下面,统计脚本,只用百度
