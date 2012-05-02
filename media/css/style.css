@@ -5,8 +5,8 @@ table {border-collapse:collapse;}
 td,th {border:1px solid;padding:3px;text-align:center;} 
 
 /*hide duoshuo*/
-.ds-powered-by{display:none}
-.ds-post-report{display:none}
+.ds-powered-by{display:none !important}
+.ds-post-report{display:none !important}
 *{padding:0;margin: 0;/*border:none;*/outline:none;}
 body{
 	font-family:"Microsoft YaHei",Tahoma,Verdana;
