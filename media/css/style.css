@@ -36,7 +36,7 @@ header{color:white}
 .content p{margin:20px 0pt;line-height:150%;}
 .entry p{margin:0px;}
 li{padding:.2em 0;}
-ol,ul{list-style-position:inside;}
+
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 hr{margin:.7em 0;border-top:3px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
 
