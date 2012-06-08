@@ -2,5 +2,5 @@ markdown: rdiscount
 permalink: /:year/:month/:day/:title/
 author: ddatsh
 pygments: false
-url: /blog
+url: http://luckypoem14.github.com/test
 paginate: 10
